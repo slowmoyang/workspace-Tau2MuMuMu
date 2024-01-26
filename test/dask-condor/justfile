@@ -1,0 +1,15 @@
+set shell := ["zsh", "-uc"]
+
+default: help
+
+alias h := help
+help:
+    just -l -f {{justfile()}}
+
+alias i:= install
+install:
+    micromamba create -y -f environment.yaml
+
+alias r := run
+run:
+    python ./test-condor.py
