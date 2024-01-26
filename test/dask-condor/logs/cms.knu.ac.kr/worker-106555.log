@@ -1,0 +1,22 @@
+000 (106555.000.000) 2024-01-26 17:10:45 Job submitted from host: <155.230.20.251:9618?addrs=155.230.20.251-9618&alias=cms.knu.ac.kr&noUDP&sock=schedd_2441_e6c4>
+...
+040 (106555.000.000) 2024-01-26 17:10:48 Started transferring input files
+	Transferring to host: <155.230.21.116:9618?addrs=155.230.21.116-9618+[2407-c000-c024-0-beee-7bff-fe2f-e09d]-9618&alias=cluster316.knu.ac.kr&noUDP&sock=slot1_11_5245_53ae_7195>
+...
+040 (106555.000.000) 2024-01-26 17:10:48 Finished transferring input files
+...
+001 (106555.000.000) 2024-01-26 17:10:49 Job executing on host: <155.230.21.116:9618?addrs=155.230.21.116-9618+[2407-c000-c024-0-beee-7bff-fe2f-e09d]-9618&alias=cluster316.knu.ac.kr&noUDP&sock=startd_4412_d7ef>
+	SlotName: slot1_11@cluster316.knu.ac.kr
+	CondorScratchDir = "/home/condor/dir_7583"
+	Cpus = 1
+	Disk = 3821141
+	Memory = 2000
+...
+006 (106555.000.000) 2024-01-26 17:10:58 Image size of job updated: 178552
+	175  -  MemoryUsage of job (MB)
+	178548  -  ResidentSetSize of job (KB)
+...
+006 (106555.000.000) 2024-01-26 17:15:58 Image size of job updated: 214704
+	175  -  MemoryUsage of job (MB)
+	178672  -  ResidentSetSize of job (KB)
+...

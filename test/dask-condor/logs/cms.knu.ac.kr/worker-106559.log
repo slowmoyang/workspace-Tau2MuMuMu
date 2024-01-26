@@ -1,0 +1,13 @@
+000 (106559.000.000) 2024-01-26 17:10:45 Job submitted from host: <155.230.20.251:9618?addrs=155.230.20.251-9618&alias=cms.knu.ac.kr&noUDP&sock=schedd_2441_e6c4>
+...
+022 (106559.000.000) 2024-01-26 17:10:47 Job disconnected, attempting to reconnect
+    Socket between submit and execute hosts closed unexpectedly
+    Trying to reconnect to slot1_8@cluster296.knu.ac.kr <155.230.21.96:9618?addrs=155.230.21.96-9618+[2407-c000-c024-0-e2cb-4eff-fe53-cf19]-9618&alias=cluster296.knu.ac.kr&noUDP&sock=startd_15894_8a5c>
+...
+024 (106559.000.000) 2024-01-26 17:10:47 Job reconnection failed
+    Job not found at execution machine
+    Can not reconnect to slot1_8@cluster296.knu.ac.kr, rescheduling job
+...
+009 (106559.000.000) 2024-01-26 17:10:57 Job was aborted.
+	via condor_rm (by user seyang)
+...

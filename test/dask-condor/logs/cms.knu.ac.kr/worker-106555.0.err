@@ -1,0 +1,73 @@
+2024-01-26 17:10:54,358 - distributed.nanny - INFO -         Start Nanny at: 'tcp://155.230.21.116:38396'
+2024-01-26 17:10:57,039 - distributed._signals - INFO - Received signal SIGTERM (15)
+2024-01-26 17:10:57,039 - distributed.nanny - INFO - Closing Nanny at 'tcp://155.230.21.116:38396'. Reason: signal-15
+2024-01-26 17:11:02,101 - distributed.worker - INFO -       Start worker at: tcp://155.230.21.116:37037
+2024-01-26 17:11:02,101 - distributed.worker - INFO -          Listening to: tcp://155.230.21.116:37037
+2024-01-26 17:11:02,101 - distributed.worker - INFO -           Worker name:          HTCondorCluster-5
+2024-01-26 17:11:02,101 - distributed.worker - INFO -          dashboard at:       155.230.21.116:46176
+2024-01-26 17:11:02,101 - distributed.worker - INFO - Waiting to connect to: tcp://155.230.20.251:33041
+2024-01-26 17:11:02,101 - distributed.worker - INFO - -------------------------------------------------
+2024-01-26 17:11:02,101 - distributed.worker - INFO -               Threads:                          1
+2024-01-26 17:11:02,101 - distributed.worker - INFO -                Memory:                   1.86 GiB
+2024-01-26 17:11:02,101 - distributed.worker - INFO -       Local Directory: /tmp/dask-scratch-space/worker-s8ob7b6j
+2024-01-26 17:11:02,101 - distributed.worker - INFO - -------------------------------------------------
+2024-01-26 17:11:32,102 - distributed.worker - INFO - Waiting to connect to: tcp://155.230.20.251:33041
+2024-01-26 17:12:00,596 - distributed.worker - INFO - Stopping worker at tcp://155.230.21.116:37037. Reason: failure-to-start-<class 'TimeoutError'>
+2024-01-26 17:12:00,596 - distributed.worker - INFO - Closed worker has not yet started: Status.init
+2024-01-26 17:12:00,598 - distributed.nanny - ERROR - Failed to start worker
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/u/user/seyang/opt/micromamba/envs/tau2mumumu-dask-condor-py311/lib/python3.11/site-packages/distributed/comm/core.py", line 342, in connect
+    comm = await wait_for(
+           ^^^^^^^^^^^^^^^
+  File "/u/user/seyang/opt/micromamba/envs/tau2mumumu-dask-condor-py311/lib/python3.11/site-packages/distributed/utils.py", line 1935, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/u/user/seyang/opt/micromamba/envs/tau2mumumu-dask-condor-py311/lib/python3.11/site-packages/distributed/comm/tcp.py", line 560, in connect
+    convert_stream_closed_error(self, e)
+  File "/u/user/seyang/opt/micromamba/envs/tau2mumumu-dask-condor-py311/lib/python3.11/site-packages/distributed/comm/tcp.py", line 140, in convert_stream_closed_error
+    raise CommClosedError(f"in {obj}: {exc.__class__.__name__}: {exc}") from exc
+distributed.comm.core.CommClosedError: in <distributed.comm.tcp.TCPConnector object at 0x2b52c9d497d0>: ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/u/user/seyang/opt/micromamba/envs/tau2mumumu-dask-condor-py311/lib/python3.11/site-packages/distributed/utils.py", line 1935, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/u/user/seyang/opt/micromamba/envs/tau2mumumu-dask-condor-py311/lib/python3.11/site-packages/distributed/worker.py", line 1477, in start_unsafe
+    await self._register_with_scheduler()
+  File "/u/user/seyang/opt/micromamba/envs/tau2mumumu-dask-condor-py311/lib/python3.11/site-packages/distributed/worker.py", line 1179, in _register_with_scheduler
+    comm = await connect(self.scheduler.address, **self.connection_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/u/user/seyang/opt/micromamba/envs/tau2mumumu-dask-condor-py311/lib/python3.11/site-packages/distributed/comm/core.py", line 366, in connect
+    await asyncio.sleep(backoff)
+  File "/u/user/seyang/opt/micromamba/envs/tau2mumumu-dask-condor-py311/lib/python3.11/asyncio/tasks.py", line 649, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/u/user/seyang/opt/micromamba/envs/tau2mumumu-dask-condor-py311/lib/python3.11/site-packages/distributed/core.py", line 663, in start
+    await wait_for(self.start_unsafe(), timeout=timeout)
+  File "/u/user/seyang/opt/micromamba/envs/tau2mumumu-dask-condor-py311/lib/python3.11/site-packages/distributed/utils.py", line 1934, in wait_for
+    async with asyncio.timeout(timeout):
+  File "/u/user/seyang/opt/micromamba/envs/tau2mumumu-dask-condor-py311/lib/python3.11/asyncio/timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/u/user/seyang/opt/micromamba/envs/tau2mumumu-dask-condor-py311/lib/python3.11/site-packages/distributed/nanny.py", line 967, in run
+    async with worker:
+  File "/u/user/seyang/opt/micromamba/envs/tau2mumumu-dask-condor-py311/lib/python3.11/site-packages/distributed/core.py", line 677, in __aenter__
+    await self
+  File "/u/user/seyang/opt/micromamba/envs/tau2mumumu-dask-condor-py311/lib/python3.11/site-packages/distributed/core.py", line 666, in start
+    raise asyncio.TimeoutError(
+TimeoutError: Worker start timed out after 60s.
