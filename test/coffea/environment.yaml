@@ -1,0 +1,15 @@
+name: tau2mumumu-coffea-py311
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - coffea=2024.1.2
+  - dask
+  - dask-jobqueue
+  - hist
+  - matplotlib
+  - mplhep
+  - ipykernel
+  - euporie
+  - aiohttp
+  - requests
