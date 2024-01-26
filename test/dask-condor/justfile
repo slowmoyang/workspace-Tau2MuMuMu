@@ -1,5 +1,8 @@
 set shell := ["zsh", "-uc"]
 
+here := justfile_directory()
+mamba_env_name := "tau2mumumu-dask-condor-py311"
+
 default: help
 
 alias h := help
@@ -12,4 +15,6 @@ install:
 
 alias r := run
 run:
-    python ./test-condor.py
+    eval "$(micromamba shell hook --shell zsh)" \
+        && micromamba activate {{mamba_env_name}} \
+        && python ./test-condor.py
